@@ -10,6 +10,9 @@ import airplane from '@/assets/images/airplane.png';
 import home from '@/assets/images/home.png';
 import custom from '@/assets/images/custom.png';
 import ellipseBg from '@/assets/images/ellipse_bg.png';
+import profile1 from '@/assets/images/profile1.png';
+import profile2 from '@/assets/images/profile2.png';
+import profile3 from '@/assets/images/profile3.png';
 
 const goals = [
   { name: 'Car', icon: car, image: car, title: 'Buy a car', cta: "Let's get your car", heroWidth: 380, heroHeight: 173, ctaIconWidth: 24 },
@@ -66,9 +69,9 @@ export default function Hero() {
               border: '1.5px solid rgba(255, 255, 255, 0.9)',
             }}>
               <div className="flex -space-x-2">
-                <Image src="/images/profile1.png" alt="User" width={26} height={26} className="rounded-full border-2 border-white sm:w-7.5 sm:h-7.5" />
-                <Image src="/images/profile2.png" alt="User" width={26} height={26} className="rounded-full border-2 border-white sm:w-7.5 sm:h-7.5" />
-                <Image src="/images/profile3.png" alt="User" width={26} height={26} className="rounded-full border-2 border-white sm:w-7.5 sm:h-7.5" />
+                <Image src={profile1} alt="User" width={26} height={26} className="rounded-full border-2 border-white sm:w-7.5 sm:h-7.5" />
+                <Image src={profile2} alt="User" width={26} height={26} className="rounded-full border-2 border-white sm:w-7.5 sm:h-7.5" />
+                <Image src={profile3} alt="User" width={26} height={26} className="rounded-full border-2 border-white sm:w-7.5 sm:h-7.5" />
               </div>
               <span className="text-xs sm:text-sm font-medium text-[#000000] px-2.5 sm:px-4 py-1" >
                 Trusted by over 2,000 users
