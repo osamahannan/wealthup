@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useState } from 'react';
 import Image, { StaticImageData } from 'next/image';
 import arrowTrendUpIcon from '@/assets/icons/arrow-trend-up.png';
 import fileIcon from '@/assets/icons/file.png';
@@ -7,7 +10,6 @@ type Option = {
   title: string;
   description: string;
   icon: StaticImageData;
-  active?: boolean;
 };
 
 const options: Option[] = [
@@ -16,7 +18,6 @@ const options: Option[] = [
     icon: arrowTrendUpIcon,
     description:
       'Professionally managed portfolios designed to grow your wealth over the long term. Diversified across sectors and asset classes to balance risk and returns.',
-    active: true,
   },
   {
     title: 'Bonds',
@@ -37,6 +38,16 @@ function TileIcon({ icon, alt }: { icon: StaticImageData; alt: string }) {
 }
 
 export default function MultipleWaysSection() {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % options.length);
+    }, 2600);
+
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section className="w-full px-6 md:px-12 lg:px-20 py-14 md:py-16">
       <div className="max-w-7xl mx-auto">
@@ -48,7 +59,10 @@ export default function MultipleWaysSection() {
         </p>
 
         <div className="flex flex-wrap justify-center gap-8 md:gap-32 mb-14 sm:mb-20">
-          {options.map((option) => (
+          {options.map((option, index) => {
+            const isActive = activeIndex === index;
+
+            return (
             <button
               key={option.title}
               className="relative h-22 w-44 sm:h-25 sm:w-50 transition-transform duration-300 hover:-translate-y-1"
@@ -56,32 +70,35 @@ export default function MultipleWaysSection() {
                 transform: 'perspective(900px) rotate(-26deg) skew(6deg, 6deg)',
                 transformStyle: 'preserve-3d',
               }}
+              onClick={() => setActiveIndex(index)}
               type="button"
             >
               <span
                 className="absolute inset-0 rounded-[20px]"
                 style={{
                   transform: 'translate(-5px, 6px) translateZ(-1px)',
-                  background: option.active
+                  background: isActive
                     ? 'linear-gradient(145deg, rgba(36, 69, 108, 0.95) 0%, rgba(30, 58, 93, 0.9) 100%)'
                     : '',
                   border: '1.5px solid rgba(74, 144, 226, 0.85)',
                   boxShadow: '0 10px 25px rgba(33, 72, 116, 0.22)',
+                  transition: 'background 700ms ease',
                 }}
               />
 
               <span
                 className="absolute inset-0 rounded-[20px]"
                 style={{
-                  background: option.active
+                  background: isActive
                     ? 'linear-gradient(145deg, #3D628F 0%, #2E537E 100%)'
                     : 'rgba(245, 250, 255, 0.55)',
                   border: '1.5px solid #4A90E2',
-                  boxShadow: option.active
+                  boxShadow: isActive
                     ? '0 12px 24px rgba(32, 73, 120, 0.3), inset 0 1px 0 rgba(255,255,255,0.12)'
                     : '0 10px 22px rgba(74, 144, 226, 0.16), inset 0 1px 0 rgba(255,255,255,0.62)',
                   backdropFilter: 'blur(3px)',
                   WebkitBackdropFilter: 'blur(3px)',
+                  transition: 'background 700ms ease, box-shadow 700ms ease',
                 }}
               />
 
@@ -91,45 +108,63 @@ export default function MultipleWaysSection() {
                 </div>
                 <p
                   className="text-[16px] sm:text-[20px] max-w-20 sm:max-w-25 leading-[1.05] font-semibold text-center"
-                  style={{ color: option.active ? '#FFFFFF' : '#2F5C93', textShadow: option.active ? '0 1px 2px rgba(0,0,0,0.18)' : 'none' }}
+                  style={{ color: isActive ? '#FFFFFF' : '#2F5C93', textShadow: isActive ? '0 1px 2px rgba(0,0,0,0.18)' : 'none', transition: 'color 700ms ease' }}
                 >
                   {option.title}
                 </p>
               </div>
             </button>
-          ))}
+            );
+          })}
         </div>
 
-        <div className="rounded-[22px] border border-[#4A90E2] overflow-hidden flex flex-col lg:flex-row">
-          {options.map((option) => (
+        <div
+          className="relative rounded-[22px] border border-[#4A90E2] overflow-hidden"
+          style={{ background: 'rgba(245, 250, 255, 0.38)' }}
+        >
+          <div
+            className="hidden lg:block pointer-events-none absolute inset-y-0 left-0 w-1/3"
+            style={{
+              background: 'linear-gradient(160deg, #3F648F 0%, #375A84 100%)',
+              transform: `translateX(${activeIndex * 100}%)`,
+              transition: 'transform 750ms cubic-bezier(0.22, 0.61, 0.36, 1)',
+            }}
+          />
+
+          <div className="relative z-10 flex flex-col lg:flex-row">
+          {options.map((option, index) => {
+            const isActive = activeIndex === index;
+
+            return (
             <article
               key={`details-${option.title}`}
-              className="flex-1 p-8 md:p-9"
+              className={`flex-1 p-8 md:p-9 transition-colors duration-700 ${index < options.length - 1 ? 'border-b lg:border-b-0 lg:border-r border-[#4A90E259]' : ''}`}
               style={{
-                background: option.active
-                  ? 'linear-gradient(160deg, #3F648F 0%, #375A84 100%)'
-                  : 'rgba(245, 250, 255, 0.38)',
+                background: 'transparent',
               }}
             >
               <div className="flex items-center gap-4 mb-7">
                 <span
                   className="h-10 w-10 rounded-full border flex items-center justify-center"
                   style={{
-                    borderColor: option.active ? 'rgba(255, 255, 255, 0.85)' : '#4A90E2',
-                    background: option.active ? 'rgba(255, 255, 255, 0.14)' : 'rgba(229, 241, 255, 0.7)',
+                    borderColor: isActive ? 'rgba(255, 255, 255, 0.85)' : '#4A90E2',
+                    background: isActive ? 'rgba(255, 255, 255, 0.14)' : 'rgba(229, 241, 255, 0.7)',
+                    transition: 'all 700ms ease',
                   }}
                 >
                   <TileIcon icon={option.icon} alt={`${option.title} icon`} />
                 </span>
-                <h3 className="text-[20px] md:text-[20px] leading-[1.1] font-semibold" style={{ color: option.active ? '#F4FAFF' : '#2F5C93' }}>
+                <h3 className="text-[20px] md:text-[20px] leading-[1.1] font-semibold" style={{ color: isActive ? '#F4FAFF' : '#2F5C93', transition: 'color 700ms ease' }}>
                   {option.title}
                 </h3>
               </div>
-              <p className="text-[16px] leading-[1.28]" style={{ color: option.active ? '#E8F3FF' : '#355E90' }}>
+              <p className="text-[16px] leading-[1.28]" style={{ color: isActive ? '#E8F3FF' : '#355E90', transition: 'color 700ms ease' }}>
                 {option.description}
               </p>
             </article>
-          ))}
+            );
+          })}
+          </div>
         </div>
       </div>
     </section>
