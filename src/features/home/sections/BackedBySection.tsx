@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import irdaiLogo from '@/assets/images/irdai.png';
+import govLoginImg from '@/assets/images/gov-login-img.png';
 import startupIndiaLogo from '@/assets/images/startupindia.png';
 import nvidiaLogo from '@/assets/images/Nvidia_logo.png';
 import razorpayLogo from '@/assets/images/razorpay.png';
@@ -8,7 +9,8 @@ import wadhwaniLogo from '@/assets/images/Wadhwanifoundation.png';
 
 export default function BackedBySection() {
   const backers = [
-    { name: 'IRDAI', logo: irdaiLogo },
+    { name: 'Registered Agent', logo: irdaiLogo },
+    { name: 'DPIIT Startup India', logo: govLoginImg },
     { name: 'Startup India', logo: startupIndiaLogo },
     { name: 'NVIDIA', logo: nvidiaLogo },
     { name: 'Razorpay', logo: razorpayLogo },
@@ -31,7 +33,7 @@ export default function BackedBySection() {
         <h2 className="text-center text-[16px] leading-none font-bold text-[#294F7C] mb-5">
           Backed By
         </h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-x-6 gap-y-5 items-center justify-items-center">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-x-6 gap-y-5 items-center justify-items-center">
           {backers.map((backer) => (
             <div key={backer.name} className="transition-all duration-200 opacity-85 hover:opacity-100">
               <Image
