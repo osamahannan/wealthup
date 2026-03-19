@@ -3,7 +3,7 @@ import logo from '../assets/images/wealthup_logo.png';
 
 export default function Header() {
   return (
-    <header className="max-w-7xl mx-auto py-5 lg:px-12">
+    <header className="w-full py-4 sm:py-5 px-4 sm:px-6 md:px-10 lg:px-12">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center gap-2">
@@ -18,7 +18,7 @@ export default function Header() {
 
         {/* Login pill button */}
         <button
-          className="px-9 py-2.5 rounded-full text-sm font-semibold text-[#294F7C] cursor-pointer transition-all duration-200 hover:-translate-y-0.5"
+          className="px-6 sm:px-9 py-2 sm:py-2.5 rounded-full text-sm font-semibold text-[#294F7C] cursor-pointer transition-all duration-200 hover:-translate-y-0.5"
           style={{
             background: 'linear-gradient(160deg, rgba(241, 249, 255, 0.72) 0%, rgba(213, 232, 248, 0.68) 100%)',
             backdropFilter: 'blur(10px)',

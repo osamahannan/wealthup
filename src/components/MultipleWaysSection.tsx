@@ -40,20 +40,20 @@ export default function MultipleWaysSection() {
   return (
     <section className="w-full px-6 md:px-12 lg:px-20 py-14 md:py-16">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-[40px] md:text-[50px] leading-[1.1] font-bold text-[#294F7C] text-center mb-3">
+        <h2 className="text-[28px] sm:text-[34px] md:text-[50px] leading-[1.1] font-bold text-[#294F7C] text-center mb-3">
           Multiple ways to grow your wealth
         </h2>
-        <p className="text-lg md:text-[36px] text-[#355E90] text-center mb-14 md:mb-16">
+        <p className="text-sm sm:text-base md:text-[36px] text-[#355E90] text-center mb-10 sm:mb-14 md:mb-16">
           Diversified investment options selected and optimized by WealthUp.
         </p>
 
-        <div className="flex flex-wrap justify-center md:gap-32 mb-20">
+        <div className="flex flex-wrap justify-center gap-8 md:gap-32 mb-14 sm:mb-20">
           {options.map((option) => (
             <button
               key={option.title}
-              className="relative h-25 w-50 transition-transform duration-300 hover:-translate-y-1"
+              className="relative h-22 w-44 sm:h-25 sm:w-50 transition-transform duration-300 hover:-translate-y-1"
               style={{
-                transform: 'perspective(900px) rotate(-40deg) skew(10deg, 10deg)',
+                transform: 'perspective(900px) rotate(-26deg) skew(6deg, 6deg)',
                 transformStyle: 'preserve-3d',
               }}
               type="button"
@@ -85,12 +85,12 @@ export default function MultipleWaysSection() {
                 }}
               />
 
-              <div className="transform translate-z-5 flex items-center gap-4 pl-6">
-                <div className="h-10 w-10 rounded-full bg-[#E5F1FF] border border-[#4A90E2] flex items-center justify-center shadow-[0_5px_14px_rgba(74,144,226,0.25)]">
+              <div className="transform translate-z-5 flex items-center gap-3 sm:gap-4 pl-4 sm:pl-6">
+                <div className="h-9 w-9 sm:h-10 sm:w-10 rounded-full bg-[#E5F1FF] border border-[#4A90E2] flex items-center justify-center shadow-[0_5px_14px_rgba(74,144,226,0.25)]">
                   <TileIcon icon={option.icon} alt={`${option.title} icon`} />
                 </div>
                 <p
-                  className="text-[20px] max-w-25 leading-[1.05] font-semibold text-center"
+                  className="text-[16px] sm:text-[20px] max-w-20 sm:max-w-25 leading-[1.05] font-semibold text-center"
                   style={{ color: option.active ? '#FFFFFF' : '#2F5C93', textShadow: option.active ? '0 1px 2px rgba(0,0,0,0.18)' : 'none' }}
                 >
                   {option.title}
@@ -121,7 +121,7 @@ export default function MultipleWaysSection() {
                 >
                   <TileIcon icon={option.icon} alt={`${option.title} icon`} />
                 </span>
-                <h3 className="text-[30px] md:text-[20px] leading-[1.1] font-semibold" style={{ color: option.active ? '#F4FAFF' : '#2F5C93' }}>
+                <h3 className="text-[20px] md:text-[20px] leading-[1.1] font-semibold" style={{ color: option.active ? '#F4FAFF' : '#2F5C93' }}>
                   {option.title}
                 </h3>
               </div>

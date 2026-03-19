@@ -16,7 +16,7 @@ export default function GoalCard({ icon, label, selected, onClick }: GoalCardPro
     <button
       onClick={onClick}
       className={clsx(
-        'flex items-center gap-6 justify-between p-4 rounded-[16px] transition-all duration-200 cursor-pointer w-[180px] h-[100px]',
+        'flex items-center gap-4 sm:gap-6 justify-between p-3 sm:p-4 rounded-2xl transition-all duration-200 cursor-pointer w-full sm:w-45 h-24 sm:h-25',
         selected
           ? 'scale-[1.02]'
           : 'hover:scale-[1.01]'
@@ -33,9 +33,9 @@ export default function GoalCard({ icon, label, selected, onClick }: GoalCardPro
           : '0 8px 28px rgba(100, 149, 237, 0.08)',
       }}
     >
-      <Image src={icon} alt={label} width={label === 'Car' || label === 'Travel' ? 80 : 60} height={60} />
+      <Image src={icon} alt={label} width={label === 'Car' || label === 'Travel' ? 72 : 56} height={56} className="h-12 sm:h-14 w-auto object-contain" />
       <span
-        className='text-[20px] font-semibold text-[#294F7C]'
+        className="text-base sm:text-[20px] font-semibold text-[#294F7C]"
       >
         {label}
       </span>

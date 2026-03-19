@@ -3,7 +3,7 @@ import logo from '../assets/images/wealthup_logo.png';
 
 export default function Footer() {
   return (
-    <footer className="w-full px-8 md:px-16 lg:px-24 py-12 bg-gray-900">
+    <footer className="w-full px-6 sm:px-8 md:px-16 lg:px-24 py-10 sm:py-12 bg-gray-900">
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
@@ -14,9 +14,9 @@ export default function Footer() {
                 alt="Wealthup Logo"
                 width={40}
                 height={40}
-                className="h-10 w-auto"
+                className="h-9 sm:h-10 w-auto"
               />
-              <span className="text-2xl font-bold text-white">WealthUp</span>
+              <span className="text-xl sm:text-2xl font-bold text-white">WealthUp</span>
             </div>
             <p className="text-gray-400">
               Building wealth systematically for your life goals

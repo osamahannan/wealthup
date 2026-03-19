@@ -29,11 +29,11 @@ const steps: Step[] = [
 function ProgressDots() {
   return (
     <div className="mt-7 flex items-center gap-2.5">
-      <span className="h-2.5 w-52 rounded-full bg-[#315B8F]" />
-      <span className="h-2.5 w-10 rounded-full bg-[#BCD5EE]" />
-      <span className="h-2.5 w-10 rounded-full bg-[#BCD5EE]" />
-      <span className="h-2.5 w-10 rounded-full bg-[#BCD5EE]" />
-      <span className="h-2.5 w-10 rounded-full bg-[#BCD5EE]" />
+      <span className="h-2.5 w-32 sm:w-52 rounded-full bg-[#315B8F]" />
+      <span className="h-2.5 w-6 sm:w-10 rounded-full bg-[#BCD5EE]" />
+      <span className="h-2.5 w-6 sm:w-10 rounded-full bg-[#BCD5EE]" />
+      <span className="h-2.5 w-6 sm:w-10 rounded-full bg-[#BCD5EE]" />
+      <span className="h-2.5 w-6 sm:w-10 rounded-full bg-[#BCD5EE]" />
     </div>
   );
 }
@@ -65,7 +65,7 @@ export default function HowItWorksSection() {
                 <h3 className="text-[20px] md:text-[24px] leading-[1.12] font-semibold text-[#2E578A] mb-3">
                   {steps[0].title}
                 </h3>
-                <p className="text-[15px] md:text-[20px] leading-[1.35] text-[#2F5A8E] max-w-157.5">
+                <p className="text-[15px] md:text-[20px] leading-[1.35] text-[#2F5A8E] max-w-full sm:max-w-157.5">
                   {steps[0].description}
                 </p>
                 <ProgressDots />

@@ -27,10 +27,10 @@ export default function CTABanner() {
 
         {/* Glass container */}
         <div
-          className="relative z-10 rounded-[48px] p-8 md:p-12 lg:p-16 flex flex-col md:flex-row items-center justify-between gap-8"
+          className="relative z-10 rounded-[48px] p-5 sm:p-8 md:p-12 lg:p-16 flex flex-col md:flex-row items-center justify-between gap-5 sm:gap-8"
         >
           {/* Left content */}
-          <div className="flex-1">
+          <div className="flex-1 text-center md:text-left">
             <h2 className="text-[16px] md:text-[36px] leading-[1.12] font-semibold text-[#2C5588] mb-3">
               Your Goals Deserve a Plan
             </h2>
@@ -41,7 +41,7 @@ export default function CTABanner() {
 
           {/* Right CTA button */}
           <button
-            className="min-w-100 cursor-pointer px-8 md:px-10 py-3.5 md:py-4 rounded-full font-semibold text-white flex items-center gap-2 whitespace-nowrap transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
+            className="w-full md:w-auto md:min-w-100 cursor-pointer px-6 sm:px-8 md:px-10 py-3 sm:py-3.5 md:py-4 rounded-full font-semibold text-sm sm:text-base text-white flex items-center justify-center gap-2 whitespace-nowrap transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
             style={{
               background: 'linear-gradient(90deg, #3578C6 0%, #294F7C 100%)',
               boxShadow: '0 12px 32px rgba(52, 120, 198, 0.4), 0 6px 16px rgba(74, 144, 226, 0.25)',

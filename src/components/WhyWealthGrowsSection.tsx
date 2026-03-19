@@ -14,10 +14,10 @@ export default function WhyWealthGrowsSection() {
   return (
     <section className="w-full px-6 md:px-12 lg:px-20 py-16 md:py-20">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-[16px] md:text-[36px] leading-[1.08] font-bold text-[#2C5588] text-center mb-4">
+        <h2 className="text-[22px] sm:text-[28px] md:text-[36px] leading-[1.08] font-bold text-[#2C5588] text-center mb-4">
           Why Your Wealth Grows Faster With WealthUp
         </h2>
-        <p className="text-[14px] md:text-[20px] leading-[1.26] text-[#315B8F] text-center max-w-270 mx-auto mb-12 md:mb-14">
+        <p className="text-[13px] sm:text-[14px] md:text-[20px] leading-[1.26] text-[#315B8F] text-center max-w-270 mx-auto mb-10 md:mb-14">
           A smarter investment approach combining expert-curated opportunities, dynamic portfolio adjustments, and tax-efficient strategies.
         </p>
 
