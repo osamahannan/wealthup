@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# WealthUp Landing Page
+
+WealthUp is a modern, Figma-inspired financial planning landing page built with Next.js and Tailwind CSS. The UI uses a glassmorphism visual system, gradient surfaces, responsive layouts, and goal-based investment interactions.
+
+## Tech Stack
+
+- Next.js (App Router)
+- TypeScript
+- Tailwind CSS
+- Next Image optimization
+
+## Project Structure
+
+```
+src/
+	app/
+		globals.css
+		layout.tsx
+		page.tsx
+	assets/
+		icons/
+		images/
+	components/
+		Header.tsx
+		Hero.tsx
+		BackedBySection.tsx
+		MultipleWaysSection.tsx
+		WhyWealthGrowsSection.tsx
+		CTABanner.tsx
+		HowItWorksSection.tsx
+		Footer.tsx
+```
 
 ## Getting Started
 
-First, run the development server:
+1. Install dependencies:
+
+```bash
+npm install
+```
+
+2. Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. Open:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```text
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Available Scripts
 
-## Learn More
+- `npm run dev` - start local development server
+- `npm run build` - build production bundle
+- `npm run start` - start production server
+- `npm run lint` - run lint checks
 
-To learn more about Next.js, take a look at the following resources:
+## Highlights
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Interactive goal planning hero section with sliders and result cards
+- Glass-effect CTA and section cards based on Figma references
+- Dynamic selected-goal image rendering and custom ellipse shadow
+- Consistent visual language across all homepage sections
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Repository
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The codebase is intended to be pushed to the GitHub repository named `waelthup`.

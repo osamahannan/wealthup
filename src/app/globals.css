@@ -12,15 +12,95 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+body {
+  background:
+    radial-gradient(ellipse at 75% 10%, rgba(200, 225, 250, 0.45) 0%, transparent 55%),
+    linear-gradient(180deg, #E4EEF8 0%, #EDF2F9 35%, #F5F8FC 65%, #FFFFFF 100%);
+  color: var(--foreground);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+* {
+  box-sizing: border-box;
 }
+
+/* ── Hero slider styles ── */
+.hero-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 10px;
+  border-radius: 999px;
+  outline: none;
+  background: linear-gradient(
+    to right,
+    #76B9FF 0%,
+    #294F7C var(--progress),
+    #DDE6F0 var(--progress),
+    #E8EEF4 100%
+  );
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.hero-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #294F7C 20% 18%, #294F7C 34% 50%, #EAF4FB 51% 100%);
+  border: 3px solid #4A90E2;
+  cursor: pointer;
+  box-shadow:
+    0 2px 6px rgba(100, 149, 237, 0.3),
+    0 0 0 2px rgba(74, 144, 226, 0.06);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.hero-slider::-webkit-slider-thumb:hover {
+  box-shadow:
+    0 2px 10px rgba(100, 149, 237, 0.45),
+    0 0 0 4px rgba(74, 144, 226, 0.08);
+  transform: scale(1.08);
+}
+
+.hero-slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #294F7C 0 18%, #EAF4FB 19% 33%, #294F7C 34% 50%, #EAF4FB 51% 100%);
+  border: 2px solid #4A90E2;
+  cursor: pointer;
+  box-shadow:
+    0 2px 6px rgba(100, 149, 237, 0.3),
+    0 0 0 2px rgba(74, 144, 226, 0.06);
+}
+
+.hero-slider::-moz-range-track {
+  height: 6px;
+  border-radius: 999px;
+  background: transparent;
+}
+
+/* ── Hero CTA button gradient hover ── */
+/* .hero-cta {
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.7) 0%,
+    rgba(240, 245, 252, 0.5) 100%
+  );
+  border: 1px solid rgba(230, 235, 245, 0.8);
+  box-shadow: 0 6px 20px rgba(100, 149, 237, 0.1);
+  transition: all 0.2s ease;
+}
+.hero-cta:hover {
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.8) 0%,
+    rgba(230, 240, 252, 0.6) 100%
+  );
+  box-shadow: 0 8px 28px rgba(100, 149, 237, 0.18);
+} */
