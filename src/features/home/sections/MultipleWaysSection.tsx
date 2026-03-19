@@ -51,10 +51,10 @@ export default function MultipleWaysSection() {
   return (
     <section className="w-full px-6 md:px-12 lg:px-20 py-14 md:py-16">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-[28px] sm:text-[34px] md:text-[50px] leading-[1.1] font-bold text-[#294F7C] text-center mb-3">
+        <h2 className="text-[28px] sm:text-[34px] md:text-[36px] leading-[1.1] font-bold text-[#294F7C] text-center mb-3">
           Multiple ways to grow your wealth
         </h2>
-        <p className="text-sm sm:text-base md:text-[36px] text-[#355E90] text-center mb-10 sm:mb-14 md:mb-16">
+        <p className="text-sm sm:text-base md:text-[20px] text-[#355E90] text-center mb-10 sm:mb-14 md:mb-16">
           Diversified investment options selected and optimized by WealthUp.
         </p>
 

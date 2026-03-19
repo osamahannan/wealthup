@@ -1,10 +1,10 @@
 import Image from 'next/image';
-import logo from '../assets/images/wealthup_logo.png';
+import logo from '@/assets/images/wealthup_logo.png';
 
 export default function Header() {
   return (
-    <header className="w-full py-4 sm:py-5 px-4 sm:px-6 md:px-10 lg:px-12">
-      <div className="max-w-7xl mx-auto flex items-center justify-between">
+    <header className="w-full py-4 sm:py-5">
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 md:px-10 lg:px-12">
         {/* Logo */}
         <div className="flex items-center gap-2">
           <Image

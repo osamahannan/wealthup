@@ -1,5 +1,7 @@
 'use client';
 
+import { memo } from 'react';
+
 interface SliderProps {
   label: string;
   value: number;
@@ -12,7 +14,7 @@ interface SliderProps {
   onChange: (value: number) => void;
 }
 
-export default function Slider({
+function Slider({
   label,
   value,
   min,
@@ -50,3 +52,5 @@ export default function Slider({
     </div>
   );
 }
+
+export default memo(Slider);

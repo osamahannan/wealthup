@@ -21,14 +21,25 @@ src/
 		icons/
 		images/
 	components/
-		Header.tsx
-		Hero.tsx
-		BackedBySection.tsx
-		MultipleWaysSection.tsx
-		WhyWealthGrowsSection.tsx
-		CTABanner.tsx
-		HowItWorksSection.tsx
-		Footer.tsx
+		layout/
+			Header.tsx
+			Footer.tsx
+			index.ts
+	features/
+		home/
+			components/
+				GoalCard.tsx
+				Slider.tsx
+				ResultBox.tsx
+				index.ts
+			sections/
+				Hero.tsx
+				BackedBySection.tsx
+				MultipleWaysSection.tsx
+				WhyWealthGrowsSection.tsx
+				CTABanner.tsx
+				HowItWorksSection.tsx
+				index.ts
 ```
 
 ## Getting Started
@@ -63,8 +74,10 @@ http://localhost:3000
 - Interactive goal planning hero section with sliders and result cards
 - Glass-effect CTA and section cards based on Figma references
 - Dynamic selected-goal image rendering and custom ellipse shadow
-- Consistent visual language across all homepage sections
+- Auto-rotating investment options with sliding active panel animation
+- Full mobile responsiveness across all homepage sections
+- Production-oriented architecture using feature and layout grouping
 
 ## Repository
 
-The codebase is intended to be pushed to the GitHub repository named `waelthup`.
+GitHub: https://github.com/osamahannan/wealthup.git

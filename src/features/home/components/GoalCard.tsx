@@ -1,5 +1,6 @@
 'use client';
 
+import { memo } from 'react';
 import Image from 'next/image';
 import type { StaticImageData } from 'next/image';
 import clsx from 'clsx';
@@ -11,12 +12,12 @@ interface GoalCardProps {
   onClick: () => void;
 }
 
-export default function GoalCard({ icon, label, selected, onClick }: GoalCardProps) {
+function GoalCard({ icon, label, selected, onClick }: GoalCardProps) {
   return (
     <button
       onClick={onClick}
       className={clsx(
-        'flex items-center gap-4 sm:gap-6 justify-between p-3 sm:p-4 rounded-2xl transition-all duration-200 cursor-pointer w-full sm:w-45 h-24 sm:h-25',
+        'flex items-center gap-3 sm:gap-4 justify-start p-3 sm:p-4 rounded-2xl transition-all duration-200 cursor-pointer w-full sm:w-45 h-24 sm:h-25',
         selected
           ? 'scale-[1.02]'
           : 'hover:scale-[1.01]'
@@ -33,12 +34,14 @@ export default function GoalCard({ icon, label, selected, onClick }: GoalCardPro
           : '0 8px 28px rgba(100, 149, 237, 0.08)',
       }}
     >
-      <Image src={icon} alt={label} width={label === 'Car' || label === 'Travel' ? 72 : 56} height={56} className="h-12 sm:h-14 w-auto object-contain" />
+      <Image src={icon} alt={label} width={label === 'Car' || label === 'Travel' ? 58 : 46} height={46} className="object-contain shrink-0" />
       <span
-        className="text-base sm:text-[20px] font-semibold text-[#294F7C]"
+        className="min-w-0 truncate text-base sm:text-[18px] font-semibold text-[#294F7C]"
       >
         {label}
       </span>
     </button>
   );
 }
+
+export default memo(GoalCard);

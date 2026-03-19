@@ -17,7 +17,7 @@ export default function WhyWealthGrowsSection() {
         <h2 className="text-[22px] sm:text-[28px] md:text-[36px] leading-[1.08] font-bold text-[#2C5588] text-center mb-4">
           Why Your Wealth Grows Faster With WealthUp
         </h2>
-        <p className="text-[13px] sm:text-[14px] md:text-[20px] leading-[1.26] text-[#315B8F] text-center max-w-270 mx-auto mb-10 md:mb-14">
+        <p className="max-w-[811px] text-[13px] sm:text-[14px] md:text-[20px] leading-[1.26] text-[#315B8F] text-center max-w-270 mx-auto mb-10 md:mb-14">
           A smarter investment approach combining expert-curated opportunities, dynamic portfolio adjustments, and tax-efficient strategies.
         </p>
 

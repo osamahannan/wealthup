@@ -1,9 +1,11 @@
+import { memo } from 'react';
+
 interface ResultBoxProps {
   label: string;
   value: string;
 }
 
-export default function ResultBox({ label, value }: ResultBoxProps) {
+function ResultBox({ label, value }: ResultBoxProps) {
   return (
     <div
       className="rounded-2xl px-4 sm:px-5 py-3 sm:py-4 text-center w-full min-w-0 sm:min-w-45"
@@ -21,3 +23,5 @@ export default function ResultBox({ label, value }: ResultBoxProps) {
     </div>
   );
 }
+
+export default memo(ResultBox);

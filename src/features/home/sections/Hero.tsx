@@ -2,9 +2,9 @@
 
 import { useState, useMemo } from 'react';
 import Image from 'next/image';
-import GoalCard from './GoalCard';
-import Slider from './Slider';
-import ResultBox from './ResultBox';
+import GoalCard from '../components/GoalCard';
+import Slider from '../components/Slider';
+import ResultBox from '../components/ResultBox';
 import car from '@/assets/images/car.png';
 import airplane from '@/assets/images/airplane.png';
 import home from '@/assets/images/home.png';
